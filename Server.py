@@ -145,7 +145,12 @@ def handleClient(client, addr):
                 client.send(data)
                 del data
                 pass
-            
+            elif url == 'favicon.io':   
+                Content_type = 'image/jpeg'
+                data = read_file(url, Content_type)
+                client.send(data)
+                del data
+                pass
             else: 
                 Content_type = 'text/html'
                 data = read_file(url, Content_type)
